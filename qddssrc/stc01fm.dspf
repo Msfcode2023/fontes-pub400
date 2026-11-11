@@ -1,0 +1,38 @@
+     A*================================================================
+     A* STC01FM - JANELA DE PESQUISA DE CLIENTES
+     A*================================================================
+     A                                      DSPSIZ(24 80 *DS3)
+     A*
+     A          R SFLREC                    SFL
+     A            W_OPZ          1A  B  4  2
+     A            W_CDCLI       10A  O  4  6
+     A            W_RZSOC       30A  O  4 18
+     A*
+     A          R SFLCTL                    SFLCTL(SFLREC)
+     A                                      WINDOW(5 8 12 56)
+     A                                      WDWTITLE((*TEXT 'PESQUISA'))
+     A                                      CA12(12)
+     A                                      OVERLAY
+     A                                      SFLSIZ(0050)
+     A                                      SFLPAG(0004)
+     A  82                                  SFLDSPCTL
+     A  81                                  SFLDSP
+     A  83                                  SFLCLR
+     A  84                                  SFLEND(*MORE)
+     A                                  1 18'LISTA DE CLIENTES'
+     A                                      COLOR(GRN)
+     A                                  2  2'OPZ'
+     A                                      COLOR(GRN)
+     A                                  2  6'COD CLIENTE'
+     A                                      COLOR(GRN)
+     A                                  2 18'RAZAO SOCIAL'
+     A                                      COLOR(GRN)
+     A                                  3  2'1=SELECIONAR'
+     A                                      COLOR(GRN)
+     A                                  3 25'F12=RETORNAR'
+     A                                      COLOR(GRN)
+     A*
+     A          R DUMMY
+     A                                      ASSUME
+     A                                  1  2' '
+

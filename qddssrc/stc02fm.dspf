@@ -1,0 +1,61 @@
+     A*================================================================
+     A* STC02FM - MANUTENCAO DO CADASTRO DE CLIENTES
+     A*================================================================
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      INDTXT(03 'F3=SAIR')
+     A                                      INDTXT(04 'F4=PESQUISAR')
+     A                                      INDTXT(06 'F6=CONFIRMAR/GRAVAR')
+     A                                      INDTXT(12 'F12=CANCELAR')
+     A                                      INDTXT(30 'PROTEGE DETALHES')
+     A                                      INDTXT(31 'POSICIONA CURSOR')
+     A                                      INDTXT(95 'ERRO NO CLIENTE')
+     A                                      CA03(03)
+     A                                      CF04(04)
+     A                                      CF06(06)
+     A                                      CA12(12)
+     A*----------------------------------------------------------------
+     A* FORMATO CHAVE: CODIGO DO CLIENTE
+     A*----------------------------------------------------------------
+     A          R KEYREC
+     A                                      OVERLAY
+     A                                  1  2'MANUTENCAO DO CADASTRO DE CLIENTES'
+     A                                      DSPATR(HI)
+     A                                  3  2'CODIGO CLIENTE:'
+     A            W_CDCLI       10A  I  3 18
+     A  31                                  DSPATR(PC)
+     A  95                                  DSPATR(RI)
+     A                                  3 30'(F4=Pesquisa)'
+     A                                      COLOR(BLU)
+     A*----------------------------------------------------------------
+     A* FORMATO DETALHE: DADOS DO CLIENTE E BOTOES
+     A*----------------------------------------------------------------
+     A          R DETREC
+     A                                      OVERLAY
+     A                                  6  2'NOME / RAZAO SOCIAL:'
+     A            W_RZSOC       30A  B  6 24
+     A  30                                  DSPATR(PR)
+     A                                  7  2'NOME FANTASIA......:'
+     A            W_FANT        30A  B  7 24
+     A  30                                  DSPATR(PR)
+     A                                  8  2'INSCR. ESTADUAL..:'
+     A            W_INSEST      15A  B  8 24
+     A  30                                  DSPATR(PR)
+     A                                  9  2'TIPO PESSOA......:'
+     A            W_TPPES        1A  B  9 24VALUES('F' 'J')
+     A  30                                  DSPATR(PR)
+     A                                  9 27'(F=Fisica, J=Juridica)'
+     A                                      COLOR(BLU)
+     A                                 10  2'CPF..............:'
+     A            W_CPF         11A  B 10 24
+     A  30                                  DSPATR(PR)
+     A                                 11  2'CNPJ.............:'
+     A            W_CNPJ        14A  B 11 24
+     A  30                                  DSPATR(PR)
+     A                                 20  2'----------------------------------'
+     A                                 20 37'----------------------------------'
+     A                                 21  2'MENSAGEM:'
+     A            W_MSG         60A  O 21 13COLOR(RED)
+     A                                      DSPATR(HI)
+     A                                 23  2'F3=SAIR   F4=PESQUISAR'
+     A                                 23 35'F6=CONFIRMAR/GRAVAR   F12=CANCELAR'
+     A                                      COLOR(BLU)

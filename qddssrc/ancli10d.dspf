@@ -1,0 +1,40 @@
+     A*================================================================*
+     A* ARQUIVO DE TELA: ANCLI10D (SUBFILE DE CONSULTA)
+     A*================================================================*
+     A                                      DSPSIZ(24 80 *DS3)
+     A                                      CA03(03 'SAIR')
+     A                                      CA12(12 'CANCELAR')
+     A*
+     A*------------ SFL: REGISTRO DO SUBFILE --------------------------*
+     A          R SFL01                     SFL
+     A            S_CODICE      10A  O  5  2TEXT('CODIGO DO CLIENTE')
+     A            S_NOME        30A  O  5 14TEXT('NOME DO CLIENTE')
+     A            S_CPF         11A  O  5 46TEXT('CPF')
+     A            S_CNPJ        14A  O  5 59TEXT('CNPJ')
+     A*
+     A*------------ CTL: CONTROLE DO SUBFILE --------------------------*
+     A          R CTL01                     SFLCTL(SFL01)
+     A                                      SFLSIZ(0014)
+     A                                      SFLPAG(0014)
+     A  31                                  SFLDSP
+     A  32                                  SFLDSPCTL
+     A  33                                  SFLCLR
+     A  34                                  SFLEND(*MORE)
+     A                                      PAGEDOWN(50 'ROLLUP')
+     A                                      PAGEUP(51 'ROLLDOWN')
+     A*
+     A                                  1 25'CONSULTA DE CLIENTES'
+     A                                      COLOR(PNK)
+     A                                  3  2'Codigo'
+     A                                      DSPATR(HI)
+     A                                  3 14'Nome do Cliente'
+     A                                      DSPATR(HI)
+     A                                  3 46'CPF'
+     A                                      DSPATR(HI)
+     A                                  3 59'CNPJ'
+     A                                      DSPATR(HI)
+     A*
+     A*------------ REGISTRO DE RODAPE (FOOTER) ----------------------*
+     A          R FOOTER
+     A                                 23  2'F3=Sair   F12=Cancelar'
+     A                                      COLOR(BLU)

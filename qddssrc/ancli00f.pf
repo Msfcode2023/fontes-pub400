@@ -1,0 +1,22 @@
+     A*==========================================================
+     A* ANCLI00F - ARQUIVO FISICO DE CLIENTES (PF)
+     A* REV 2 - INCLUI CLINSEST E CLTPPES
+     A*==========================================================
+     A          R ANCLI00R                  TEXT('REGISTRO DE CLIENTES')
+     A            CLNCLI        10A         TEXT('CODIGO DO CLIENTE')
+     A                                      COLHDG('COD' 'CLIENTE')
+     A            CLNOME        30A         TEXT('NOME / RAZAO SOCIAL')
+     A                                      COLHDG('RAZAO' 'SOCIAL')
+     A            CLFANT        30A         TEXT('NOME FANTASIA')
+     A                                      COLHDG('NOME' 'FANTASIA')
+     A            CLINSEST      15A         TEXT('INSCRICAO ESTADUAL')
+     A                                      COLHDG('INSC' 'ESTADUAL')
+     A            CLTPPES        1A         TEXT('TIPO DE PESSOA')
+     A                                      COLHDG('TIPO' 'PESSOA')
+     A                                      VALUES('F' 'J')
+     A            CLICPF        11A         TEXT('CPF DO CLIENTE')
+     A                                      COLHDG('CPF' 'CLIENTE')
+     A            CLINPJ        14A         TEXT('CNPJ DO CLIENTE')
+     A                                      COLHDG('CNPJ' 'CLIENTE')
+     A*----------------------------------------------------------
+     A          K CLNCLI

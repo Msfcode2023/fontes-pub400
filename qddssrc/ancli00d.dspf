@@ -1,0 +1,37 @@
+     A                                      DSPSIZ(24 80 *DS3)
+     A          R FORMAT01
+     A                                      BLINK
+     A                                      CF03(03 'FINE')
+     A                                  1 32'CADASTRO CLIENTE'
+     A                                      DSPATR(HI)
+     A                                  1 72DATE
+     A                                      EDTCDE(Y)
+     A*CORPO DA TELA
+     A                                  5  5'CODIGO CLIENTE..'
+     A            VCLNCLI       10A  B  5 28TEXT('CODIGOCLIENTE')
+     A                                      CHECK(RZ)
+     A                                 24  2'F03 SAIR'
+     A                                 24 12'ENTER CONTINUA'
+     A*
+     A          R FORMAT02
+     A                                      BLINK
+     A                                      CF03(03 'SAIR')
+     A                                      CF06(06 'CONFERMA')
+     A                                      CF12(12 'VOLTAR')
+     A                                  1  2'ANCLI00D'
+     A                                  1 32'CADASTRO DE CLIENTES'
+     A                                      DSPATR(HI)
+     A                                  1 72DATE
+     A                                      EDTCDE(Y)
+     A*CORPO DA TELA
+     A                                  5  5'CODIGO DO CLIENTE'
+     A            VCLNCL1       10A  O  5 28TEXT('CODIGO CLIENTE')
+     A                                  7  5'NOME CLIENTE'
+     A            VNOMCLI       30A  B  7 28
+     A                                  9  5'CPF DO CLIENTE'
+     A            V_CPF         14A  B  9 28
+     A                                 11  5'CNPJ DO CLIENTE'
+     A            V_CNPJ        18A  B 11 28
+     A                                 24  2'F03 SAIR'
+     A                                 24 18'F06 CONFIRMAR'
+     A                                 24 35'F12 VOLTAR'
